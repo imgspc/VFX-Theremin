@@ -1,5 +1,5 @@
 # VFX-Theremin
-## Physical Unity VFX authoring tool using the Leap Motion
+## Unity Physical VFX authoring tool
 
 ![header](images/headergif.gif)
 
