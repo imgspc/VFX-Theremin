@@ -17,12 +17,12 @@ With this small Unity package, you can now use your Leap Motion (mine was gather
 
 1. Add the PhysicalVFXAuthoring component to a game object in your scene. The scene must also contain the gameobjects that will be tracked in world space (eg. the leapmotion capsule hand fingers).
 2. In the PhysicalVFXAuthoring script, assign:
-⋅⋅* The affected particle system
-⋅⋅* The gameobjects that will affect the final animations (here called nodes)
-⋅⋅* The recording length, preroll length and recorder framerate
-⋅⋅* The size node index - this takes distance from the first node to this node to scale the system as we record. With the demo setup, this matches the middle finger.
-⋅⋅* The interpolation slices - this is how many keys the final animation will have. somewhere in the 20s is good.
-⋅⋅* The various scales and features of the different things you can record.
+- The affected particle system
+- The gameobjects that will affect the final animations (here called nodes)
+- The recording length, preroll length and recorder framerate
+- The size node index - this takes distance from the first node to this node to scale the system as we record. With the demo setup, this matches the middle finger.
+- The interpolation slices - this is how many keys the final animation will have. somewhere in the 20s is good.
+- The various scales and features of the different things you can record.
 
 3. Press record, watch the console for prerool and move! Once it stops recording changes with be applied automatically.
 
