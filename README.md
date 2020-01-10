@@ -1,7 +1,7 @@
 # VFX-Theremin
 ## Physical Unity VFX authoring tool using the Leap Motion
 
-![header](images/footergif.gif)
+![header](images/headergif.gif)
 
 As with many other of my experiments, this small project started from a core design philosophy of mine: the mouse and keyboard aren’t really the best tools to express heartfelt, visceral artistic ideas and as digital creators, we often revert to our own bodies and pre-digital instincts to act out our ideas. Why not take advantage of that?
 
