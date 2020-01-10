@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &687042695087389432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 687042695087389431}
+  - component: {fileID: 6238273928790309459}
+  m_Layer: 0
+  m_Name: Physical VFX Authoring
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &687042695087389431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687042695087389432}
+  m_LocalRotation: {x: -0.6637638, y: -0.24375722, z: -0.24375722, w: 0.6637638}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: -130.33, z: 90.00001}
+--- !u!114 &6238273928790309459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687042695087389432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35d7fb3e06795848918423c6ecf7c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectedParticleSystem: {fileID: 3856997951136692024, guid: ec20d27d7ea9ade4b81ea5a1845ff16b,
+    type: 3}
+  nodes: []
+  recordingLength: 4
+  preRollSeconds: 4
+  recorderTimeInterval: 0.2
+  sizeNodeIndex: 2
+  interpolationSlices: 10
+  simulationScale: 10
+  velocityOverLifetime: 1
+  sizeOverLifetime: 1
+  sizeOverLifetimeScale: 10
+  noiseStrength: 1
+  noiseScale: 3
+  averagePositions: []
+  averageVelocities: []
+  averageExpansions: []
