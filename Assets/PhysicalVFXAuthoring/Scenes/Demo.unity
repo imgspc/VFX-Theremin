@@ -1129,7 +1129,7 @@ PrefabInstance:
     - target: {fileID: 6238273928790309459, guid: 34a828aa1eddb4f46aed937332cf341d,
         type: 3}
       propertyPath: interpolationSlices
-      value: 5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6238273928790309459, guid: 34a828aa1eddb4f46aed937332cf341d,
         type: 3}
@@ -1150,6 +1150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: noiseScale
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238273928790309459, guid: 34a828aa1eddb4f46aed937332cf341d,
+        type: 3}
+      propertyPath: sizeOverLifetimeScale
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a828aa1eddb4f46aed937332cf341d, type: 3}
