@@ -23,43 +23,41 @@ public class PhysicalVFXAuthoring : MonoBehaviour
     [SerializeField]
     int preRollSeconds = 4;
 
-    [Tooltip("Time interval between frames where positional data is recorded. You shouldn't really change this.")]
-    [SerializeField]
-    float recorderTimeInterval = 0.2f;
-
     [Tooltip("The node index that informs scale of the particle. On a finger, 2 is most likely the middle finger.")]
     [SerializeField]
     int sizeNodeIndex = 2;
 
     [Tooltip("How many slices of the recorded data will be used to generate the particle system curves.")]
     [SerializeField]
-    int interpolationSlices = 3;
+    [Range(3, 40)]
+    int interpolationSlices = 10;
 
-    [Tooltip("Simulation scale applied to the various forces")]
-    [SerializeField]
-    float simulationScale = 10f;
-
-
-    [Space(10)]
     [Header("Recorder Settings")]
 
     [SerializeField]
     bool velocityOverLifetime = true;
     [SerializeField]
+    float velocityOverLifetimeScale = 10f;
+
+    [Space(10)]
+
+    [SerializeField]
     bool sizeOverLifetime = true;
-    [Tooltip("Size Scale")]
     [SerializeField]
     float sizeOverLifetimeScale = 1f;
+
+    [Space(10)]
+
     [SerializeField]
     bool noiseStrength = true;
     [SerializeField]
     float noiseScale = 1f;
 
-    // Internal Data 
+    // Dataviz
 
-    public List<Vector3> averagePositions = new List<Vector3>();
-    public List<Vector3> averageVelocities = new List<Vector3>();
-    public List<float> averageExpansions = new List<float>();
+    List<Vector3> averagePositions = new List<Vector3>();
+    List<Vector3> averageVelocities = new List<Vector3>();
+    List<float> averageExpansions = new List<float>();
 
     void Start()
     {
@@ -84,7 +82,7 @@ public class PhysicalVFXAuthoring : MonoBehaviour
     {
         CancelInvoke("PreRoll");
         Debug.Log("Started Recording Physical VFX Authoring Data!");
-        InvokeRepeating("RecordFrame", 0f, recorderTimeInterval);
+        InvokeRepeating("RecordFrame", 0f, 0.1f);
     }
 
     void StopRecording()
@@ -97,7 +95,7 @@ public class PhysicalVFXAuthoring : MonoBehaviour
 
     void RecordFrame()
     {
-        recordingLength -= recorderTimeInterval;
+        recordingLength -= 0.1f;
 
         // First we compute base node positions
         Vector3[] nodePositions = new Vector3[nodes.Length];
@@ -176,9 +174,9 @@ public class PhysicalVFXAuthoring : MonoBehaviour
 
             if (velocityOverLifetime)
             {
-                volCurveX.AddKey(relativePosition, averageVelocities[sampledFrame].x * simulationScale);
-                volCurveY.AddKey(relativePosition, averageVelocities[sampledFrame].y * simulationScale);
-                volCurveZ.AddKey(relativePosition, averageVelocities[sampledFrame].z * simulationScale);
+                volCurveX.AddKey(relativePosition, averageVelocities[sampledFrame].x * velocityOverLifetimeScale);
+                volCurveY.AddKey(relativePosition, averageVelocities[sampledFrame].y * velocityOverLifetimeScale);
+                volCurveZ.AddKey(relativePosition, averageVelocities[sampledFrame].z * velocityOverLifetimeScale);
             }
 
             if (sizeOverLifetime)
